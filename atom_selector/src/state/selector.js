@@ -1,10 +1,12 @@
 import { selector } from 'recoil';
-import { productQuantitiesState } from '../state/atom';
+import { produto1, produto2 } from './atom';
+
 
 export const totalItemsSelector = selector({
-    key: 'totalItemsSelector',
-    get: ({ get }) => {
-        const quantities = get(productQuantitiesState);
-        return Object.values(quantities).reduce((total, qty) => total + qty, 0);
-    },
+  key: 'totalItemsSelector',
+  get: ({ get }) => {
+    const quantidadeProduto1 = get(produto1)
+    const quantidadeProduto2 = get(produto2);
+    return quantidadeProduto1 + quantidadeProduto2;
+  }
 })

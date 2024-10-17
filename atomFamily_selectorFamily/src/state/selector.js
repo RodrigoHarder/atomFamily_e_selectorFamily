@@ -1,9 +1,9 @@
-import { selectorFamily } from "recoil";
-import { productQuantityState } from "./atom";
+import { selectorFamily } from 'recoil';
+import { quantidadeDeProdutos } from './atom';
 
-export const totalItemsSelector = selectorFamily({
-    key: 'totalItemsSelector',
-    get: (productIds) => ({ get }) => {
-      return productIds.reduce((total, id) => total + get(productQuantityState(id)), 0);
-    },
-  });
+export const totalDeItens = selectorFamily({
+  key: 'totalDeItens',
+  get: (idDosProdutos) => ({ get }) => {
+    return idDosProdutos.reduce((total, id) => total + get(quantidadeDeProdutos(id)), 0);
+  }
+})

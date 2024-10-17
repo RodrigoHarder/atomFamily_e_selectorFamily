@@ -1,6 +1,6 @@
 import { atomFamily } from 'recoil';
 
-export const productQuantityState = atomFamily({
-  key: 'productQuantityState',
+export const quantidadeDeProdutos = atomFamily({
+  key: 'quantidadeDeProdutos',
   default: 0
 });

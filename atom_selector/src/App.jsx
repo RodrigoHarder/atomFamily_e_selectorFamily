@@ -1,12 +1,12 @@
 import { RecoilRoot } from "recoil";
-import Cart from "./components/Cart";
+import Carrinho from "./componentes/Carrinho";
 
 export default function App() {
   return (
     <RecoilRoot>
       <div>
         <h1>Loja Virtual</h1>
-        <Cart />
+        <Carrinho />
       </div>
     </RecoilRoot>
   );
