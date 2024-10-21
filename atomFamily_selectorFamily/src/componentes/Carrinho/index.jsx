@@ -1,11 +1,12 @@
 import { useRecoilValue } from 'recoil';
-import { totalDeItens } from '../../state/selector';
+import { totalDeItens, valorTotalCarrinho } from '../../state/selector';
 import Item from '../Item';
 import './Carrinho.css';
 
-export default function   Carrinho() {
+export default function Carrinho() {
   const idProdutos = [1, 2];
-  const total = useRecoilValue(totalDeItens(idProdutos));
+  const totalItens = useRecoilValue(totalDeItens(idProdutos));
+  const valorTotal = useRecoilValue(valorTotalCarrinho(idProdutos));
 
   return (
     <div className='carrinho'>
@@ -13,7 +14,8 @@ export default function   Carrinho() {
       {idProdutos.map((id) => (
         <Item key={id} id={id} />
       ))}
-      <h3>Itens no carrinho: {total}</h3>
+      <h3>Itens no carrinho: {totalItens}</h3>
+      <h3>Valor total: R$ {valorTotal.toFixed(2)}</h3>
     </div>
-  )
+  );
 }

@@ -3,16 +3,19 @@ import { produto1, produto2 } from '../../state/atom';
 import './Item.css';
 
 export default function Item({ id }) {
-  const [quantidade, setQuantidade] = useRecoilState(id === 1 ? produto1 : produto2);
+  const [produto, setProduto] = useRecoilState(id === 1 ? produto1 : produto2);
+
+  const precoTotal = produto.quantidade * produto.preco;
 
   return (
     <div className='item'>
       <h3>Estampa {id}:</h3>
+      <p>R$ {precoTotal.toFixed(2)}</p>
       <div>
-        <button onClick={() => setQuantidade(quantidade > 0 ? quantidade - 1 : 0)}>-</button>
-        <p>{quantidade}</p>
-        <button onClick={() => setQuantidade(quantidade + 1)}>+</button>
+        <button onClick={() => setProduto({ ...produto, quantidade: produto.quantidade > 0 ? produto.quantidade - 1 : 0 })}>-</button>
+        <p>{produto.quantidade}</p>
+        <button onClick={() => setProduto({ ...produto, quantidade: produto.quantidade + 1 })}>+</button>
       </div>
     </div>
-  )
+  );
 }
