@@ -9,7 +9,6 @@ export default function Carrinho() {
 
   return (
     <div className='carrinho'>
-      <h2>Carrinho</h2>
       <Item id={1} />
       <Item id={2} />
       <h3>Itens no carrinho: {total}</h3>

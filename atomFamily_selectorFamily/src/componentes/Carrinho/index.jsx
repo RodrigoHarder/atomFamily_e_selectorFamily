@@ -10,7 +10,6 @@ export default function Carrinho() {
 
   return (
     <div className='carrinho'>
-      <h2>Carrinho</h2>
       {idProdutos.map((id) => (
         <Item key={id} id={id} />
       ))}

@@ -1,0 +1,16 @@
+{
+  "carrinho": [
+    {
+      "id": "1",
+      "quantidade": 5,
+      "tamanho": "M",
+      "cor": "Branco"
+    },
+    {
+      "id": "2",
+      "quantidade": 5,
+      "tamanho": "M",
+      "cor": "Branco"
+    }
+  ]
+}
